@@ -1,0 +1,11 @@
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav class="site-nav">
+      {% for subject in site.subjects %}
+      <a href="{{ site.baseurl }}/{{ subject.key }}/"
+         {% if page.subject == subject.key %}class="active"{% endif %}>{{ subject.icon }} {{ subject.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>

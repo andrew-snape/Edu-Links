@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<h1 class="page-heading"><span class="icon">{{ page.icon }}</span> {{ page.title }}</h1>
+{% if page.description %}<p class="page-intro">{{ page.description }}</p>{% endif %}
+
+{{ content }}
+
+{% assign groups = site.data.links[page.subject] %}
+{% for group in groups %}
+<section class="subarea">
+  <h2>{{ group[0] }}</h2>
+  <div class="card-grid">
+    {% for link in group[1] %}
+      {% include card.html link=link %}
+    {% endfor %}
+  </div>
+</section>
+{% endfor %}

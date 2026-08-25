@@ -1,0 +1,36 @@
+title: Edu Links
+description: A quick-reference hub of planning resources, organised by subject.
+url: ""
+baseurl: ""
+
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+# Order and labels for the top navigation / homepage cards.
+# `key` must match a top-level key in _data/links.yml
+subjects:
+  - key: maths
+    title: Maths
+    icon: "➗"
+  - key: literacy
+    title: Literacy
+    icon: "📖"
+  - key: class-utilities
+    title: Class Utilities
+    icon: "🧰"
+  - key: research
+    title: Research
+    icon: "🔍"
+  - key: pyp
+    title: PYP
+    icon: "🌐"
+  - key: christian-studies
+    title: Christian Studies
+    icon: "✝️"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

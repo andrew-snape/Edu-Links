@@ -1,0 +1,15 @@
+<!-- Renders one link card. Expects `link` with title/url/description/(logo). -->
+{% assign domain = include.link.url | remove_first: "https://" | remove_first: "http://" | split: "/" | first %}
+{% if include.link.logo %}
+  {% assign logo_src = include.link.logo %}
+{% else %}
+  {% assign logo_src = "https://www.google.com/s2/favicons?sz=64&domain=" | append: domain %}
+{% endif %}
+<a class="card" href="{{ include.link.url }}" target="_blank" rel="noopener">
+  <div class="card-top">
+    <img class="card-logo" src="{{ logo_src }}" alt="" loading="lazy">
+    <span class="card-title">{{ include.link.title }}</span>
+  </div>
+  {% if include.link.description %}<p class="card-desc">{{ include.link.description }}</p>{% endif %}
+  <span class="card-url">{{ domain }}</span>
+</a>
