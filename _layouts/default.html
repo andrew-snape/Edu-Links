@@ -4,10 +4,20 @@
 {% include head.html %}
 </head>
 <body>
+<a class="skip-link" href="#content">Skip to content</a>
 {% include nav.html %}
-<main>
+<div class="search-bar">
+  <div class="search-bar-inner">
+    <label class="visually-hidden" for="search">Search all links</label>
+    <input type="search" id="search" class="search-input" autocomplete="off"
+           placeholder="Search all links…  (press / to focus)">
+    <button type="button" class="search-clear" hidden aria-label="Clear search">&times;</button>
+  </div>
+</div>
+<main id="content">
 {{ content }}
 </main>
 {% include footer.html %}
+<script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
 </body>
 </html>

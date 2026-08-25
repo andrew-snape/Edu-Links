@@ -1,15 +1,34 @@
-<!-- Renders one link card. Expects `link` with name/url/description/(logo). -->
-{% assign domain = include.link.url | remove_first: "https://" | remove_first: "http://" | split: "/" | first %}
-{% if include.link.logo %}
-  {% assign logo_src = include.link.logo %}
-{% else %}
-  {% assign logo_src = "https://www.google.com/s2/favicons?sz=64&domain=" | append: domain %}
-{% endif %}
-<a class="card" href="{{ include.link.url }}" target="_blank" rel="noopener">
-  <div class="card-top">
-    <img class="card-logo" src="{{ logo_src }}" alt="" loading="lazy">
+{%- comment -%}
+  Renders one link card.
+  Expects `link` with name / url / description / (optional) logo.
+
+  If no `logo` is given the site's favicon is fetched from Google's favicon
+  service. If that image fails to load - a 404, or a school network that
+  blocks the service - the inline onerror handler drops it and flags the
+  wrapper, which reveals a letter tile instead of a broken-image icon.
+
+  These are ~1KB images, and lazy-loading them would mean onerror never
+  fires for cards below the fold, leaving them blank instead of falling
+  back. So they load eagerly on purpose.
+{%- endcomment -%}
+{%- assign domain = include.link.url | remove_first: "https://" | remove_first: "http://" | split: "/" | first -%}
+{%- if include.link.logo -%}
+  {%- assign logo_src = include.link.logo -%}
+{%- else -%}
+  {%- assign logo_src = "https://www.google.com/s2/favicons?sz=64&amp;domain=" | append: domain -%}
+{%- endif -%}
+{%- assign letter = include.link.name | strip | slice: 0 | upcase -%}
+<a class="card" href="{{ include.link.url }}" target="_blank" rel="noopener"
+   data-name="{{ include.link.name | downcase | escape }}"
+   data-desc="{{ include.link.description | downcase | escape }}"
+   data-domain="{{ domain }}">
+  <span class="card-top">
+    <span class="card-logo-wrap" data-letter="{{ letter }}">
+      <img class="card-logo" src="{{ logo_src }}" alt=""
+           onerror="this.parentNode.classList.add('no-logo');this.remove();">
+    </span>
     <span class="card-title">{{ include.link.name }}</span>
-  </div>
-  {% if include.link.description %}<p class="card-desc">{{ include.link.description }}</p>{% endif %}
+  </span>
+  {% if include.link.description %}<span class="card-desc">{{ include.link.description }}</span>{% endif %}
   <span class="card-url">{{ domain }}</span>
 </a>

@@ -7,9 +7,13 @@ title: Home
 
 <div class="subject-grid">
   {% for subject in site.subjects %}
-  <a class="subject-tile" href="{{ site.baseurl }}/{{ subject.slug }}/">
-    <span class="icon">{{ subject.icon }}</span>
+  {%- assign groups = site.data.links[subject.key] -%}
+  {%- assign total = 0 -%}
+  {%- for group in groups -%}{%- assign total = total | plus: group[1].size -%}{%- endfor -%}
+  <a class="subject-tile" href="{{ subject.slug | prepend: '/' | append: '/' | relative_url }}">
+    <span class="icon" aria-hidden="true">{{ subject.icon }}</span>
     <span class="name">{{ subject.title }}</span>
+    <span class="tally">{{ total }} link{% unless total == 1 %}s{% endunless %} · {{ groups.size }} area{% unless groups.size == 1 %}s{% endunless %}</span>
   </a>
   {% endfor %}
 </div>

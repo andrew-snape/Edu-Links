@@ -1,0 +1,33 @@
+---
+layout: null
+permalink: /search.json
+---
+{%- comment -%}
+  Flat index of every link on the site, used by assets/js/search.js so the
+  search box can match across all subjects from any page.
+{%- endcomment -%}
+[
+{%- assign first = true -%}
+{%- for subject in site.subjects -%}
+  {%- assign groups = site.data.links[subject.key] -%}
+  {%- for group in groups -%}
+    {%- assign key = group[0] -%}
+    {%- include heading.html key=key -%}
+    {%- for link in group[1] -%}
+      {%- assign domain = link.url | remove_first: "https://" | remove_first: "http://" | split: "/" | first -%}
+      {%- if first == false -%},{%- endif -%}
+      {%- assign first = false -%}
+      {
+        "name": {{ link.name | jsonify }},
+        "url": {{ link.url | jsonify }},
+        "description": {{ link.description | jsonify }},
+        "domain": {{ domain | jsonify }},
+        "subject": {{ subject.title | jsonify }},
+        "icon": {{ subject.icon | jsonify }},
+        "subarea": {{ heading | jsonify }},
+        "href": {{ subject.slug | prepend: "/" | append: "/" | relative_url | jsonify }}
+      }
+    {%- endfor -%}
+  {%- endfor -%}
+{%- endfor -%}
+]

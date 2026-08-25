@@ -1,17 +1,32 @@
 ---
 layout: default
 ---
-<h1 class="page-heading"><span class="icon">{{ page.icon }}</span> {{ page.title }}</h1>
+{% assign groups = site.data.links[page.subject] %}
+
+<h1 class="page-heading"><span class="icon" aria-hidden="true">{{ page.icon }}</span> {{ page.title }}</h1>
 {% if page.description %}<p class="page-intro">{{ page.description }}</p>{% endif %}
 
 {{ content }}
 
-{% assign groups = site.data.links[page.subject] %}
+{% comment %}
+  Jump links to each sub-area. Skipped when there is only one, since a
+  table of contents pointing at a single section is just noise.
+{% endcomment %}
+{% if groups.size > 1 %}
+<nav class="jump-nav" aria-label="Sections on this page">
+  {% for group in groups %}
+    {% assign key = group[0] %}
+    {% include heading.html key=key %}
+    <a href="#{{ key | replace: '_', '-' }}">{{ heading }}</a>
+  {% endfor %}
+</nav>
+{% endif %}
+
 {% for group in groups %}
-{% assign words = group[0] | replace: "_", " " | split: " " %}
-{% capture heading %}{% for word in words %}{{ word | capitalize }} {% endfor %}{% endcapture %}
-<section class="subarea">
-  <h2>{{ heading | strip | replace: "Atl", "ATL" }}</h2>
+{% assign key = group[0] %}
+{% include heading.html key=key %}
+<section class="subarea" id="{{ key | replace: '_', '-' }}">
+  <h2>{{ heading }} <span class="count">{{ group[1].size }}</span></h2>
   <div class="card-grid">
     {% for link in group[1] %}
       {% include card.html link=link %}

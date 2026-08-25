@@ -4,8 +4,18 @@ url: ""
 baseurl: ""
 
 markdown: kramdown
-plugins:
-  - jekyll-feed
+
+# Words that keep fixed casing in auto-generated sub-area headings.
+# Matched per whole word, so "atlas" is not mangled into "ATLas".
+acronyms:
+  - ATL
+  - PYP
+  - IB
+  - STEM
+  - STEAM
+  - ICT
+  - BTN
+  - PZ
 
 # Order and labels for the top navigation / homepage cards.
 # `key` must match a top-level key in _data/links.yml (snake_case).
