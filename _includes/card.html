@@ -22,8 +22,9 @@
   Sites with no discoverable favicon fall back to a letter tile. With every
   tile the same colour, two failed favicons that happen to share an initial
   letter render as visually identical cards - the "these look like copies"
-  problem. Spreading tiles across a small palette (keyed off name length, so
-  it's stable across builds) keeps same-letter fallbacks visually distinct.
+  problem. Spreading tiles across a small palette, keyed off a cheap hash of
+  the name/domain (so it's stable across builds without needing real
+  randomness), keeps same-letter fallbacks visually distinct.
 {%- endcomment -%}
 {%- assign tile_wc = include.link.name | split: " " | size | times: 17 -%}
 {%- assign tile_dsize = domain | size | times: 5 -%}

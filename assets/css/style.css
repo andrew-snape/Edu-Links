@@ -24,6 +24,10 @@
   --tile-fg-4: #c2255c;
   --tile-bg-5: #e8f7e6;
   --tile-fg-5: #2f9e44;
+  --tile-bg-6: #eceafd;
+  --tile-fg-6: #5b4fd6;
+  --tile-bg-7: #fbe9df;
+  --tile-fg-7: #c05621;
   --shadow: 0 1px 2px rgba(20, 25, 35, 0.06), 0 1px 8px rgba(20, 25, 35, 0.04);
   --shadow-hover: 0 4px 14px rgba(20, 25, 35, 0.10);
 }
@@ -53,6 +57,10 @@
     --tile-fg-4: #f783ac;
     --tile-bg-5: #1c3320;
     --tile-fg-5: #69db7c;
+    --tile-bg-6: #211f3d;
+    --tile-fg-6: #9f97f0;
+    --tile-bg-7: #3a2015;
+    --tile-fg-7: #f6a96a;
   }
 }
 
@@ -394,6 +402,8 @@ main,
 .card-logo-wrap[data-tile="3"] { background: var(--tile-bg-3); }
 .card-logo-wrap[data-tile="4"] { background: var(--tile-bg-4); }
 .card-logo-wrap[data-tile="5"] { background: var(--tile-bg-5); }
+.card-logo-wrap[data-tile="6"] { background: var(--tile-bg-6); }
+.card-logo-wrap[data-tile="7"] { background: var(--tile-bg-7); }
 
 .card-logo-wrap::before {
   content: attr(data-letter);
@@ -413,6 +423,8 @@ main,
 .card-logo-wrap[data-tile="3"]::before { color: var(--tile-fg-3); }
 .card-logo-wrap[data-tile="4"]::before { color: var(--tile-fg-4); }
 .card-logo-wrap[data-tile="5"]::before { color: var(--tile-fg-5); }
+.card-logo-wrap[data-tile="6"]::before { color: var(--tile-fg-6); }
+.card-logo-wrap[data-tile="7"]::before { color: var(--tile-fg-7); }
 
 .card-logo-wrap.no-logo::before {
   opacity: 1;
