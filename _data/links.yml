@@ -20,9 +20,6 @@ maths:
     - name: Fraction Talks
       url: https://fractiontalks.com/
       description: Shaded diagrams for quick fraction reasoning and estimation discussions.
-    - name: Number Talk Images
-      url: https://numbertalkimages.wordpress.com/
-      description: Photo prompts for counting and grouping discussions, good bank for a five minute warm up.
     - name: Maths Starters
       url: https://mathsstarters.net/
       description: Ready made daily starter slides covering number facts, puzzles, and quick reasoning warm ups.
@@ -40,9 +37,6 @@ maths:
     - name: Ochre Education
       url: https://ochreeducation.org/
       description: Free, sequenced Australian Curriculum aligned lesson resources, including the coordinates unit already in use.
-    - name: 101qs (Dan Meyer)
-      url: https://www.101qs.com/
-      description: Photo and video hooks designed to provoke a genuine maths question before any numbers are given.
 
   fluency_and_number_facts:
     - name: Times Tables Rock Stars
@@ -94,9 +88,6 @@ maths:
     - name: Toy Theater Maths
       url: https://toytheater.com/category/teacher-tools/virtual-manipulatives/
       description: Simple virtual manipulatives and maths games that run straight in the browser.
-    - name: Didax Virtual Manipulatives
-      url: https://www.didax.com/apps/manipulatives/
-      description: Free online versions of common classroom manipulatives such as base ten blocks and counters.
 
   practice_and_revision:
     - name: Maths Is Fun
@@ -268,6 +259,11 @@ class_utilities:
     - name: Ron Ritchhart
       url: https://www.ronritchhart.com/
       description: Co-author of Making Thinking Visible, with downloadable routine documents and Cultures of Thinking materials.
+
+  evidence_and_research:
+    - name: AERO (Australian Education Research Organisation)
+      url: https://www.edresearch.edu.au/
+      description: Australia's national education evidence body, with practice guides, videos and courses on effective teaching strategies.
 
 research:
   search_and_encyclopedia:
