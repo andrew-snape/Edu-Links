@@ -57,6 +57,12 @@ maths:
     - name: Topmarks Maths
       url: https://www.topmarks.co.uk/maths-games
       description: Large library of short browser based games sorted by age and skill, handy for early finishers.
+    - name: Math Fact Fluency Toolkit
+      url: https://kcm.nku.edu/mathfactfluency/tools.php
+      description: Over 60 free games and assessment tools for building addition, subtraction, multiplication and division fact fluency.
+    - name: Love Maths Games
+      url: https://www.lovemaths.me/games
+      description: Free browser games covering operations, number and other strands for Foundation to Year 6.
 
   problem_solving_and_planning:
     - name: Building Thinking Classrooms Resources
@@ -74,6 +80,9 @@ maths:
     - name: Peter Sullivan Challenging Tasks
       url: https://www.mav.vic.edu.au/
       description: Mathematical Association of Victoria, publisher of Peter Sullivan's challenging task resources and Victorian maths professional learning.
+    - name: Rob Vingerhoets Classroom Maths Ideas
+      url: https://robvingerhoets.com.au/maths/classroom-maths-ideas/
+      description: Downloadable lesson ideas, activities and warm ups by year level and strand from Australian maths consultant Rob Vingerhoets.
 
   manipulatives_and_visual_tools:
     - name: Mathigon Polypad
@@ -99,6 +108,28 @@ maths:
     - name: Corbettmaths Primary
       url: https://corbettmaths.com/primary/
       description: Free primary worksheets, videos and five-a-day practice questions sorted by topic.
+
+  curriculum_and_assessment_platforms:
+    - name: Essential Assessment
+      url: https://www.essentialassessment.com.au/
+      description: Thousands of curriculum aligned online and paper maths assessments and matched learning activities for Australian primary schools.
+    - name: Inquisitive
+      url: https://www.inquisitive.com/au/
+      description: Curriculum aligned F-6 maths lessons with teaching notes, built in differentiation and an assessment for learning tool.
+    - name: Problemo
+      url: https://app.problemo.edu.au/dashboard
+      description: Curriculum aligned maths problems for Years 3-10 with enabling and extending prompts to build problem solving skills.
+    - name: Mathematics Curriculum Companion (Arc)
+      url: https://arc.educationapps.vic.gov.au/learning/sites/mcc
+      description: Victorian Department of Education tool to help plan and teach the Victorian Curriculum 2.0 Mathematics.
+
+  professional_learning:
+    - name: Australian Association of Mathematics Teachers (AAMT)
+      url: http://www.mathseducation.org.au/
+      description: National professional body for maths teachers, with lesson plans, professional learning and Australian Curriculum aligned resources.
+    - name: T2L TV
+      url: https://t2ltv.vhx.tv/browse
+      description: Subscription video platform with 350+ professional learning videos and 200+ open ended activity demonstrations from Rob Vingerhoets and Peter Sullivan.
 
 literacy:
   reading:
