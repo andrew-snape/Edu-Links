@@ -8,6 +8,22 @@
   --accent-soft: #eaf1ff;
   --accent-text: #ffffff;
   --radius: 10px;
+
+  /* Fallback letter-tile palette, cycled per card so same-letter fallbacks
+     (e.g. two sites with no discoverable favicon both starting with "T")
+     don't render as identical-looking tiles. */
+  --tile-bg-0: var(--accent-soft);
+  --tile-fg-0: var(--accent);
+  --tile-bg-1: #e3f6f3;
+  --tile-fg-1: #12897f;
+  --tile-bg-2: #f1eaff;
+  --tile-fg-2: #7c3aed;
+  --tile-bg-3: #fff3dc;
+  --tile-fg-3: #b7791f;
+  --tile-bg-4: #ffe9ee;
+  --tile-fg-4: #c2255c;
+  --tile-bg-5: #e8f7e6;
+  --tile-fg-5: #2f9e44;
   --shadow: 0 1px 2px rgba(20, 25, 35, 0.06), 0 1px 8px rgba(20, 25, 35, 0.04);
   --shadow-hover: 0 4px 14px rgba(20, 25, 35, 0.10);
 }
@@ -24,6 +40,19 @@
     --accent-text: #10131a;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 1px 8px rgba(0, 0, 0, 0.25);
     --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.45);
+
+    --tile-bg-0: var(--accent-soft);
+    --tile-fg-0: var(--accent);
+    --tile-bg-1: #163330;
+    --tile-fg-1: #4fd8c4;
+    --tile-bg-2: #2a2140;
+    --tile-fg-2: #b794f6;
+    --tile-bg-3: #3a2f14;
+    --tile-fg-3: #f0b429;
+    --tile-bg-4: #3a1620;
+    --tile-fg-4: #f783ac;
+    --tile-bg-5: #1c3320;
+    --tile-fg-5: #69db7c;
   }
 }
 
@@ -356,9 +385,15 @@ main,
   height: 32px;
   flex-shrink: 0;
   border-radius: 6px;
-  background: var(--accent-soft);
+  background: var(--tile-bg-0);
   display: block;
 }
+
+.card-logo-wrap[data-tile="1"] { background: var(--tile-bg-1); }
+.card-logo-wrap[data-tile="2"] { background: var(--tile-bg-2); }
+.card-logo-wrap[data-tile="3"] { background: var(--tile-bg-3); }
+.card-logo-wrap[data-tile="4"] { background: var(--tile-bg-4); }
+.card-logo-wrap[data-tile="5"] { background: var(--tile-bg-5); }
 
 .card-logo-wrap::before {
   content: attr(data-letter);
@@ -369,9 +404,15 @@ main,
   justify-content: center;
   font-weight: 700;
   font-size: 0.95rem;
-  color: var(--accent);
+  color: var(--tile-fg-0);
   opacity: 0;
 }
+
+.card-logo-wrap[data-tile="1"]::before { color: var(--tile-fg-1); }
+.card-logo-wrap[data-tile="2"]::before { color: var(--tile-fg-2); }
+.card-logo-wrap[data-tile="3"]::before { color: var(--tile-fg-3); }
+.card-logo-wrap[data-tile="4"]::before { color: var(--tile-fg-4); }
+.card-logo-wrap[data-tile="5"]::before { color: var(--tile-fg-5); }
 
 .card-logo-wrap.no-logo::before {
   opacity: 1;

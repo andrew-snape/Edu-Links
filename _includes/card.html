@@ -18,12 +18,23 @@
   {%- assign logo_src = "https://www.google.com/s2/favicons?sz=64&amp;domain=" | append: domain -%}
 {%- endif -%}
 {%- assign letter = include.link.name | strip | slice: 0 | upcase -%}
+{%- comment -%}
+  Sites with no discoverable favicon fall back to a letter tile. With every
+  tile the same colour, two failed favicons that happen to share an initial
+  letter render as visually identical cards - the "these look like copies"
+  problem. Spreading tiles across a small palette (keyed off name length, so
+  it's stable across builds) keeps same-letter fallbacks visually distinct.
+{%- endcomment -%}
+{%- assign tile_wc = include.link.name | split: " " | size | times: 17 -%}
+{%- assign tile_dsize = domain | size | times: 5 -%}
+{%- assign tile_nsize = include.link.name | size -%}
+{%- assign tile = tile_wc | plus: tile_dsize | plus: tile_nsize | modulo: 8 -%}
 <a class="card" href="{{ include.link.url }}" target="_blank" rel="noopener"
    data-name="{{ include.link.name | downcase | escape }}"
    data-desc="{{ include.link.description | downcase | escape }}"
    data-domain="{{ domain }}">
   <span class="card-top">
-    <span class="card-logo-wrap" data-letter="{{ letter }}">
+    <span class="card-logo-wrap" data-letter="{{ letter }}" data-tile="{{ tile }}">
       <img class="card-logo" src="{{ logo_src }}" alt=""
            onerror="this.parentNode.classList.add('no-logo');this.remove();">
     </span>
