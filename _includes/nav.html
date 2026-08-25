@@ -1,0 +1,11 @@
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav class="site-nav" aria-label="Subjects">
+      {% for subject in site.subjects %}
+      <a href="{{ subject.slug | prepend: '/' | append: '/' | relative_url }}"
+         {% if page.subject == subject.key %}class="active" aria-current="page"{% endif %}>{{ subject.icon }} {{ subject.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>

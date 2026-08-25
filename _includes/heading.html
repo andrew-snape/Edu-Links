@@ -1,0 +1,19 @@
+{%- comment -%}
+  Turns a snake_case sub-area key into a display heading and assigns it to
+  the `heading` variable for the caller to use.
+
+  Words listed under `acronyms` in _config.yml keep their fixed casing. The
+  match is on the whole word, so "atl" becomes "ATL" while "atlas" stays
+  "Atlas".
+
+  Usage: assign the sub-area key to `key`, include this file, then output
+  the `heading` variable it sets.
+{%- endcomment -%}
+{%- assign words = include.key | replace: "_", " " | split: " " -%}
+{%- capture heading -%}
+{%- for word in words -%}
+{%- assign upper = word | upcase -%}
+{%- if site.acronyms contains upper %}{{ upper }} {% else %}{{ word | capitalize }} {% endif -%}
+{%- endfor -%}
+{%- endcapture -%}
+{%- assign heading = heading | strip -%}

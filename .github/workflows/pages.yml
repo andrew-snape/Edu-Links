@@ -1,0 +1,68 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "pages-${{ github.ref }}"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      # Only on the deploying branch: this action reads the repo's Pages
+      # config and fails if Pages has not been enabled, which must not break
+      # a pull request build check. On a PR the step is skipped and
+      # base_path is empty, so the site builds at the root - fine for
+      # verifying that it compiles.
+      - name: Setup Pages
+        id: pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
+
+      # configure-pages knows the repo's base path (e.g. /Edu-Links for a
+      # project site). Passing it through explicitly keeps asset and nav URLs
+      # correct - without it they would point at the domain root and 404.
+      - name: Build with Jekyll
+        run: |
+          bundle exec jekyll build \
+            --destination ./_site \
+            --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+
+      - name: Upload artifact
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

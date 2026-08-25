@@ -1,0 +1,444 @@
+:root {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --text: #1f2430;
+  --muted: #5b6472;
+  --border: #e2e5ea;
+  --accent: #2f6fed;
+  --accent-soft: #eaf1ff;
+  --accent-text: #ffffff;
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(20, 25, 35, 0.06), 0 1px 8px rgba(20, 25, 35, 0.04);
+  --shadow-hover: 0 4px 14px rgba(20, 25, 35, 0.10);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171d;
+    --surface: #1c2029;
+    --text: #e8eaee;
+    --muted: #9aa3b2;
+    --border: #2b313c;
+    --accent: #6f9dff;
+    --accent-soft: #232c40;
+    --accent-text: #10131a;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 1px 8px rgba(0, 0, 0, 0.25);
+    --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.45);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--accent);
+}
+
+/* Keyboard focus is always visible, but the ring is not painted for mouse
+   clicks (:focus-visible), so it never reads as a stuck selection. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent);
+  color: var(--accent-text);
+  padding: 0.6rem 1rem;
+  z-index: 100;
+  border-radius: 0 0 var(--radius) 0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.9rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.site-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+}
+
+.site-nav a:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.site-nav a.active {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+/* ---------- Search ---------- */
+
+.search-bar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.search-bar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.7rem 1.25rem;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.6rem 2.4rem 0.6rem 1rem;
+}
+
+.search-input::placeholder {
+  color: var(--muted);
+}
+
+/* Suppress the native clear widget - .search-clear is the styled one, and
+   showing both puts two crosses in the field. */
+.search-input::-webkit-search-cancel-button,
+.search-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.search-clear {
+  position: absolute;
+  right: 1.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 0;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0 0.3rem;
+}
+
+.search-clear:hover {
+  color: var(--text);
+}
+
+.search-status {
+  color: var(--muted);
+}
+
+/* ---------- Layout ---------- */
+
+main,
+.search-results {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.75rem 1.25rem 4rem;
+}
+
+.page-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.25rem 0 0.25rem;
+  font-size: 1.6rem;
+}
+
+.page-heading .icon {
+  font-size: 1.6rem;
+}
+
+.page-intro {
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+}
+
+/* ---------- Jump nav ---------- */
+
+.jump-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 2rem;
+}
+
+.jump-nav a {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+}
+
+.jump-nav a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---------- Subject tiles (homepage) ---------- */
+
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.subject-tile {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.25rem;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.subject-tile:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.subject-tile .icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.subject-tile .name {
+  font-weight: 700;
+  display: block;
+}
+
+.subject-tile .tally {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+/* ---------- Sub-areas ---------- */
+
+.subarea {
+  margin-bottom: 2.25rem;
+  scroll-margin-top: 4.5rem;
+}
+
+.subarea h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.9rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.subarea h2 .count {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+}
+
+/* ---------- Cards ---------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+/* The letter tile is hidden until the favicon actually fails: the inline
+   onerror drops the <img> and adds .no-logo, which reveals the letter. That
+   ordering avoids both a broken-image icon and a letter flashing behind a
+   favicon that is still loading. */
+.card-logo-wrap {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  display: block;
+}
+
+.card-logo-wrap::before {
+  content: attr(data-letter);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--accent);
+  opacity: 0;
+}
+
+.card-logo-wrap.no-logo::before {
+  opacity: 1;
+}
+
+.card-logo {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  object-fit: contain;
+  background: var(--surface);
+  display: block;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.card-desc {
+  color: var(--muted);
+  font-size: 0.9rem;
+  display: block;
+}
+
+.card-meta {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.card-url {
+  font-size: 0.78rem;
+  color: var(--accent);
+  word-break: break-word;
+  margin-top: auto;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding: 2rem 1rem;
+}
+
+@media (max-width: 480px) {
+  .site-header-inner {
+    padding: 0.75rem 1rem;
+  }
+
+  main,
+  .search-results,
+  .search-bar-inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .card-grid,
+  .subject-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

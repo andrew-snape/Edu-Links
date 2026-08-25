@@ -1,0 +1,16 @@
+---
+layout: default
+title: Page not found
+permalink: /404.html
+---
+<h1 class="page-heading">Page not found</h1>
+<p class="page-intro">That page doesn't exist. Pick a subject from the nav above, or search for a link.</p>
+
+<div class="subject-grid">
+  {% for subject in site.subjects %}
+  <a class="subject-tile" href="{{ subject.slug | prepend: '/' | append: '/' | relative_url }}">
+    <span class="icon" aria-hidden="true">{{ subject.icon }}</span>
+    <span class="name">{{ subject.title }}</span>
+  </a>
+  {% endfor %}
+</div>
