@@ -26,8 +26,14 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
+      # Only on the deploying branch: this action reads the repo's Pages
+      # config and fails if Pages has not been enabled, which must not break
+      # a pull request build check. On a PR the step is skipped and
+      # base_path is empty, so the site builds at the root - fine for
+      # verifying that it compiles.
       - name: Setup Pages
         id: pages
+        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
 
       # configure-pages knows the repo's base path (e.g. /Edu-Links for a
