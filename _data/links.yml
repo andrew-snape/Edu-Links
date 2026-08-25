@@ -1,144 +1,206 @@
-# Edu Links data file
-# ---------------------
-# Add/edit links here. Each top-level key must match a `key` entry in
-# _config.yml's `subjects` list (and a page's `subject:` front matter).
-# Under each subject, group links into any sub-areas you like
-# (e.g. "Warm Ups", "Rich Tasks") - headings are created automatically.
+# Education Links data file
+# Structure: page > sub_area > list of sites (name, url, description)
 #
-# Each link needs:
-#   title:       shown on the card
-#   url:         the website
-#   description: a short one-liner
-#   logo:        (optional) direct image URL - if omitted, a favicon is
-#                fetched automatically from the site's domain
+# To add/edit links: find the top-level page key (maths, literacy, etc.),
+# then the sub_area key under it, and add an entry with name/url/description.
+# Sub-area and page keys are snake_case; they're auto-converted to Title
+# Case headings by the layout.
 
 maths:
-  Warm Ups:
-    - title: Estimation 180
+  warm_ups:
+    - name: Estimation 180
       url: https://www.estimation180.com/
-      description: A daily estimation challenge to build number sense.
-    - title: Which One Doesn't Belong
+      description: Daily estimation photo tasks that build number sense in a couple of minutes, great for a settling task.
+    - name: Which One Doesn't Belong (WODB)
       url: https://wodb.ca/
-      description: Open-ended sets of four images/numbers to spark discussion.
-    - title: Number Talks Images
-      url: https://numbertalksimages.wordpress.com/
-      description: Dot images and arrays for quick mental-maths talks.
-  Rich Tasks:
-    - title: NRICH
+      description: Picture grids with four options where every choice has a valid reason, sparks quick reasoning talk.
+    - name: Splat! (Steve Wyborney)
+      url: https://stevewyborney.com/free-resources/splat/
+      description: Visual number talk slides that reveal hidden dot totals, good for subitising and part-part-whole thinking.
+    - name: Fraction Talks
+      url: https://fractiontalks.com/
+      description: Shaded diagrams for quick fraction reasoning and estimation discussions.
+    - name: Number Talk Images
+      url: https://numbertalkimages.wordpress.com/
+      description: Photo prompts for counting and grouping discussions, good bank for a five minute warm up.
+    - name: Maths Starters
+      url: https://mathsstarters.net/
+      description: Ready made daily starter slides covering number facts, puzzles, and quick reasoning warm ups.
+
+  rich_tasks:
+    - name: NRICH Maths
       url: https://nrich.maths.org/
-      description: Rich, open-ended maths problems and investigations by age group.
-    - title: Open Middle
-      url: https://www.openmiddle.com/
-      description: Problems with a fixed start and end but many paths in between.
-    - title: youcubed
+      description: University of Cambridge bank of open ended, low floor high ceiling maths problems by topic and age.
+    - name: YouCubed
       url: https://www.youcubed.org/
-      description: Jo Boaler's tasks for building a growth mindset in maths.
-  Games & Practice:
-    - title: Times Tables Rock Stars
+      description: Jo Boaler's site with rich tasks, week of inspirational maths units, and growth mindset framing.
+    - name: Open Middle
+      url: https://www.openmiddle.com/
+      description: Problems with a fixed start and end but many paths through the middle, sorted by grade and topic.
+    - name: Ochre Education
+      url: https://ochreeducation.org/
+      description: Free, sequenced Australian Curriculum aligned lesson resources, including the coordinates unit already in use.
+    - name: 101qs (Dan Meyer)
+      url: https://www.101qs.com/
+      description: Photo and video hooks designed to provoke a genuine maths question before any numbers are given.
+
+  fluency_and_number_facts:
+    - name: Times Tables Rock Stars
       url: https://ttrockstars.com/
-      description: Fun, competitive times-tables practice.
-    - title: Prodigy Math
+      description: Gamified times tables practice with a leaderboard, popular for daily fluency sessions.
+    - name: Mathletics
+      url: https://www.mathletics.com/au/
+      description: Australian Curriculum aligned practice platform with live competitions and topic based courses.
+    - name: Prodigy Maths
       url: https://www.prodigygame.com/
-      description: Curriculum-aligned maths practice inside an RPG game.
+      description: RPG style game that adapts questions to each student's level, good for independent practice blocks.
+    - name: Topmarks Maths
+      url: https://www.topmarks.co.uk/maths-games
+      description: Large library of short browser based games sorted by age and skill, handy for early finishers.
+
+  problem_solving_and_planning:
+    - name: Building Thinking Classrooms Resources
+      url: https://buildingthinkingclassrooms.com/
+      description: Peter Liljedahl's hub of thin sliced tasks and practices for vertical non permanent surface work.
+    - name: Illustrative Mathematics
+      url: https://curriculum.illustrativemathematics.org/
+      description: Full task based unit sequences with teacher notes, useful for planning a topic from scratch.
+    - name: Would You Rather Math
+      url: https://www.wouldyourathermath.com/
+      description: Comparison style prompts that force students to justify a choice using estimation and reasoning.
+    - name: Dr Paul Swan Maths Resources
+      url: https://drpaulswan.com.au/
+      description: Dice, card and board games, problem solving booklets, and curriculum guides organised by year level, from WA maths educator Paul Swan.
 
 literacy:
-  Reading:
-    - title: Storyline Online
+  reading:
+    - name: Storyline Online
       url: https://storylineonline.net/
-      description: Picture books read aloud by actors, free to stream.
-    - title: Epic!
-      url: https://www.getepic.com/
-      description: A digital library of books for kids up to age 12.
-  Writing:
-    - title: Pobble 365
-      url: https://www.pobble365.com/
-      description: A daily image, question and vocabulary prompt for writing.
-  Phonics & Spelling:
-    - title: Phonics Play
-      url: https://www.phonicsplay.co.uk/
-      description: Interactive phonics games and resources.
-    - title: Spelling Shed
-      url: https://www.spellingshed.com/
-      description: Gamified spelling practice linked to word lists.
-  Comprehension:
-    - title: CommonLit
+      description: Well known actors reading picture books aloud on video, good for a modelled reading session.
+    - name: Oxford Owl
+      url: https://www.oxfordowl.co.uk/
+      description: Free ebook library plus reading advice, searchable by age and level.
+    - name: Reading Eggspress
+      url: https://readingeggspress.com.au/
+      description: Australian comprehension and vocabulary platform aimed at upper primary readers.
+    - name: CommonLit
       url: https://www.commonlit.org/
-      description: Free reading passages and comprehension questions.
-    - title: Newsela
-      url: https://newsela.com/
-      description: Levelled current-events articles for comprehension practice.
+      description: Free levelled texts with built in comprehension questions and discussion prompts, easy to assign digitally.
 
-class-utilities:
-  Timers & Randomisers:
-    - title: Online Stopwatch
+  writing:
+    - name: Pobble 365
+      url: https://www.pobble365.com/
+      description: A new image every day with linked warm up, discussion, and writing prompts.
+    - name: Story Starters (Scholastic)
+      url: https://www.scholastic.com/teachers/story-starters/
+      description: Random story prompt generator that spins up a genre, character, and setting combination.
+    - name: Squigly's Playhouse Writing Prompts
+      url: https://www.squiglysplayhouse.com/CreativeWriting/WritingPrompts.html
+      description: Simple bank of writing prompts sorted loosely by type, handy for a quick free write.
+
+  grammar_and_spelling:
+    - name: Education.com Grammar Worksheets
+      url: https://www.education.com/worksheets/grammar/
+      description: Printable and digital grammar practice sheets sortable by grade level.
+    - name: Spellzone
+      url: https://www.spellzone.com/
+      description: Structured spelling lists and interactive games organised by spelling pattern.
+
+  comprehension:
+    - name: ReadWorks
+      url: https://www.readworks.org/
+      description: Free levelled passages with comprehension questions, searchable by skill and topic.
+    - name: Newsela
+      url: https://newsela.com/
+      description: Current news articles rewritten at multiple reading levels with comprehension quizzes attached.
+
+class_utilities:
+  timers_and_randomisers:
+    - name: Classroomscreen
+      url: https://classroomscreen.com/
+      description: All in one display with timer, noise meter, random name picker, and traffic light widgets.
+    - name: Online Stopwatch
       url: https://www.online-stopwatch.com/
-      description: Classroom timers, countdowns and alarms.
-    - title: Wheel of Names
+      description: Big, simple full screen timers and stopwatches, no login needed.
+    - name: Wheel of Names
       url: https://wheelofnames.com/
-      description: A customisable spinner for picking students or teams at random.
-  Behaviour & Rewards:
-    - title: ClassDojo
-      url: https://www.classdojo.com/
-      description: Behaviour tracking, points and parent communication.
-  Organisation:
-    - title: Google Classroom
-      url: https://classroom.google.com/
-      description: Manage classes, assignments and announcements.
-    - title: Padlet
-      url: https://padlet.com/
-      description: A shared online board for collecting ideas and work.
-  Presentation Tools:
-    - title: Canva for Education
+      description: Spin the wheel style random picker, good for choosing students or groups fairly.
+
+  grouping_and_seating:
+    - name: Flippity Randomiser
+      url: https://www.flippity.net/
+      description: Turns a Google Sheet into random name pickers, seating charts, and group generators.
+    - name: Team Shake
+      url: https://teamshake.tools/
+      description: Quick random or balanced group generator, good for mixing up table groups.
+
+  general_tools:
+    - name: Canva for Education
       url: https://www.canva.com/education/
-      description: Free design tool for slides, posters and worksheets.
-    - title: Nearpod
-      url: https://nearpod.com/
-      description: Interactive lessons with polls, quizzes and activities.
+      description: Free design platform for teachers and students, used for posters, slides, and printable resources.
+    - name: Seesaw
+      url: https://web.seesaw.me/
+      description: Digital portfolio and activity platform already used for class reflections and interactive tasks.
+    - name: Arc
+      url: https://arc.educationapps.vic.gov.au/home
+      description: Victorian Department of Education's central hub for curriculum aligned teaching resources, learning sequences, and planning support.
 
 research:
-  Search Engines:
-    - title: Kiddle
+  search_and_encyclopedia:
+    - name: Kiddle
       url: https://www.kiddle.co/
-      description: A visual, kid-safe search engine.
-    - title: Google Scholar
-      url: https://scholar.google.com/
-      description: Search academic articles and papers.
-  Referencing:
-    - title: EasyBib
-      url: https://www.easybib.com/
-      description: Citation and bibliography generator.
-  Fact Checking:
-    - title: Britannica Kids
+      description: Kid safe visual search engine with filtered results, good starting point for independent research.
+    - name: National Geographic Kids
+      url: https://kids.nationalgeographic.com/
+      description: Articles, facts, and videos on animals, science, and geography pitched at a primary audience.
+    - name: DK Findout!
+      url: https://www.dkfindout.com/uk/
+      description: Encyclopedia style articles with strong visuals, good for non fiction research tasks.
+    - name: Britannica Kids
       url: https://kids.britannica.com/
-      description: Reliable, age-appropriate reference articles.
+      description: Simplified encyclopedia entries levelled for younger and older primary readers.
+
+  news_and_current_events:
+    - name: Behind the News (BTN)
+      url: https://www.abc.net.au/btn/
+      description: ABC's weekly news program for upper primary, with full episodes and topic clips already used in class.
+    - name: DOGO News
+      url: https://www.dogonews.com/
+      description: Kid friendly news articles across science, world events, and sport with linked quizzes.
 
 pyp:
-  Planning:
-    - title: IB Primary Years Programme
-      url: https://www.ibo.org/programmes/primary-years-programme/
-      description: Official IB PYP programme information and standards.
-  Units of Inquiry:
-    - title: Toddle
+  inquiry_and_planning:
+    - name: IB Programme Resource Centre
+      url: https://resources.ibo.org/
+      description: Official IB hub for PYP planners, unit exemplars, and programme documentation.
+    - name: Sharing PYP
+      url: https://sharingpyp.blogspot.com/
+      description: Long running blog of PYP teacher reflections, unit ideas, and inquiry provocations.
+    - name: Toddle
       url: https://www.toddleapp.com/
-      description: Planning and portfolio platform built for the IB PYP.
-  Assessment:
-    - title: IB Assessment (PYP)
-      url: https://www.ibo.org/programmes/primary-years-programme/assessment/
-      description: Guidance on formative and summative assessment in the PYP.
+      description: Planning and assessment platform built specifically for IB programmes, including unit planners.
 
-christian-studies:
-  Bible Resources:
-    - title: Bible Gateway
+  atl_skills:
+    - name: IB Approaches to Teaching and Learning
+      url: https://www.ibo.org/benefits/learning-approaches-to-teaching-and-learning/
+      description: Official overview of the five ATL skill categories with descriptions for each strand.
+
+christian_studies:
+  bible_resources:
+    - name: Bible Gateway
       url: https://www.biblegateway.com/
-      description: Searchable Bible in multiple translations and languages.
-    - title: YouVersion Bible
-      url: https://www.bible.com/
-      description: Free Bible app with reading plans, including kids' content.
-  Lesson Ideas:
-    - title: Ministry-To-Children
-      url: https://ministry-to-children.com/
-      description: Free Sunday school lessons, crafts and worksheets.
-  Worship & Reflection:
-    - title: WorshipHouse Kids
-      url: https://www.worshiphousekids.com/
-      description: Kids' worship videos and reflection resources.
+      description: Searchable Bible in multiple translations, handy for quickly pulling up a passage during planning.
+    - name: Bible for Kids
+      url: https://bibleforkids.org/
+      description: Bible stories retold with illustrations and simple language, suited to primary aged readers.
+    - name: YouVersion Bible App and Kids
+      url: https://www.bible.com/kids
+      description: Bible stories, audio, and activities designed specifically for children.
+
+  devotions_and_lutheran_resources:
+    - name: Lutheran Education Australia
+      url: https://www.lea.org.au/
+      description: National body for Lutheran schools, with curriculum and formation resources for Christian studies.
+    - name: Lutheran Church of Australia
+      url: https://www.lca.org.au/
+      description: Denominational resources including devotions and background material for Christian studies planning.

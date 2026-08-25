@@ -8,8 +8,10 @@ layout: default
 
 {% assign groups = site.data.links[page.subject] %}
 {% for group in groups %}
+{% assign words = group[0] | replace: "_", " " | split: " " %}
+{% capture heading %}{% for word in words %}{{ word | capitalize }} {% endfor %}{% endcapture %}
 <section class="subarea">
-  <h2>{{ group[0] }}</h2>
+  <h2>{{ heading | strip | replace: "Atl", "ATL" }}</h2>
   <div class="card-grid">
     {% for link in group[1] %}
       {% include card.html link=link %}

@@ -6,18 +6,23 @@ A Jekyll site of planning resources, organised by subject as link cards
 ## Structure
 
 - `_data/links.yml` — all the links, grouped by subject and then by
-  sub-area (e.g. Maths → Warm Ups, Rich Tasks). Edit this file to add,
-  remove or reorganise links; card logos are fetched automatically from
-  each site's favicon unless a `logo:` URL is given.
+  sub-area (e.g. `maths` → `warm_ups`, `rich_tasks`). Keys are
+  `snake_case`; the layout turns them into readable headings (e.g.
+  `fluency_and_number_facts` → "Fluency And Number Facts"). Each link
+  needs `name`, `url` and `description`; card logos are fetched
+  automatically from each site's favicon unless a `logo:` URL is given.
+  Edit this file to add, remove or reorganise links.
 - `_config.yml` — the `subjects` list controls the navigation and the
-  order of subjects on the homepage.
+  order of subjects on the homepage. `key` must match the corresponding
+  top-level key in `_data/links.yml`; `slug` is the page's URL segment.
 - One page per subject at the repo root (`maths.md`, `literacy.md`,
   `class-utilities.md`, `research.md`, `pyp.md`, `christian-studies.md`),
   each using the `subject` layout to render its cards.
 
 ## Adding a new subject
 
-1. Add an entry to `subjects:` in `_config.yml`.
+1. Add an entry to `subjects:` in `_config.yml` (`key` = data key, `slug`
+   = URL segment).
 2. Add a matching top-level key to `_data/links.yml`.
 3. Add a page (e.g. `new-subject.md`) with front matter like:
 
@@ -25,7 +30,7 @@ A Jekyll site of planning resources, organised by subject as link cards
    ---
    layout: subject
    title: New Subject
-   subject: new-subject
+   subject: new_subject
    icon: "🎨"
    permalink: /new-subject/
    ---

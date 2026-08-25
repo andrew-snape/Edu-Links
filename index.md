@@ -7,7 +7,7 @@ title: Home
 
 <div class="subject-grid">
   {% for subject in site.subjects %}
-  <a class="subject-tile" href="{{ site.baseurl }}/{{ subject.key }}/">
+  <a class="subject-tile" href="{{ site.baseurl }}/{{ subject.slug }}/">
     <span class="icon">{{ subject.icon }}</span>
     <span class="name">{{ subject.title }}</span>
   </a>

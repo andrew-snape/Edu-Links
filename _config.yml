@@ -8,24 +8,31 @@ plugins:
   - jekyll-feed
 
 # Order and labels for the top navigation / homepage cards.
-# `key` must match a top-level key in _data/links.yml
+# `key` must match a top-level key in _data/links.yml (snake_case).
+# `slug` is the URL segment for the page (matches its permalink).
 subjects:
   - key: maths
+    slug: maths
     title: Maths
     icon: "➗"
   - key: literacy
+    slug: literacy
     title: Literacy
     icon: "📖"
-  - key: class-utilities
+  - key: class_utilities
+    slug: class-utilities
     title: Class Utilities
     icon: "🧰"
   - key: research
+    slug: research
     title: Research
     icon: "🔍"
   - key: pyp
+    slug: pyp
     title: PYP
     icon: "🌐"
-  - key: christian-studies
+  - key: christian_studies
+    slug: christian-studies
     title: Christian Studies
     icon: "✝️"
 
