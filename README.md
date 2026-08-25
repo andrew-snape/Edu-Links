@@ -33,7 +33,7 @@ A Jekyll site of planning resources, organised by subject as link cards
   wording needs to change.
 - `_includes/footer.html` — the site footer: a "Last updated" date and a
   `© Andrew Snape` credit linking to
-  [andrew-snape.github.io](https://andrew-snape.github.io). Both the date
+  [andrew-snape.github.io](https://andrew-snape.github.io/). Both the date
   and the copyright year are pulled from `site.time` (the Jekyll build
   time), so they refresh automatically on every deploy with no manual
   editing.
@@ -62,13 +62,15 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Then visit http://localhost:4000.
+Then visit http://localhost:4000/edsites/ (the `baseurl` in `_config.yml`
+matches the deployed path, so local links behave the same as production).
 
 ## Deployment
 
 Pushing to `main` builds and deploys the site via the GitHub Actions
-workflow in `.github/workflows/pages.yml`. Pull requests run the same
-build as a check, without deploying.
+workflow in `.github/workflows/pages.yml`, publishing to
+https://andrew-snape.github.io/edsites/. Pull requests run the same build
+as a check, without deploying.
 
 One-time setup: in the repo settings, set **Pages → Source** to
 **GitHub Actions**.

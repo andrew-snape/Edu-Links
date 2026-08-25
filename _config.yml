@@ -1,7 +1,7 @@
 title: Edu Links
 description: A quick-reference hub of planning resources, organised by subject.
-url: ""
-baseurl: ""
+url: "https://andrew-snape.github.io"
+baseurl: "/edsites"
 
 markdown: kramdown
 
