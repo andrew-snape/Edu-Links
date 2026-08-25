@@ -145,6 +145,17 @@ class_utilities:
       url: https://arc.educationapps.vic.gov.au/home
       description: Victorian Department of Education's central hub for curriculum aligned teaching resources, learning sequences, and planning support.
 
+  thinking_routines:
+    - name: PZ's Thinking Routines Toolbox
+      url: https://pz.harvard.edu/thinking-routines
+      description: Harvard Project Zero's official index of thinking routines (See-Think-Wonder, Claim-Support-Question, and more) sorted by purpose.
+    - name: Visible Thinking
+      url: http://www.visiblethinkingpz.org/VisibleThinking_html_files/VisibleThinking1.html
+      description: The original Project Zero Visible Thinking site, with routine descriptions, examples, and printable documentation.
+    - name: Cultures of Thinking
+      url: https://pz.harvard.edu/projects/cultures-of-thinking
+      description: Project Zero's research on building a whole class culture of thinking, the framework thinking routines sit within.
+
 research:
   search_and_encyclopedia:
     - name: Kiddle
