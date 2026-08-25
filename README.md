@@ -28,6 +28,15 @@ A Jekyll site of planning resources, organised by subject as link cards
 - One page per subject at the repo root (`maths.md`, `literacy.md`,
   `class-utilities.md`, `research.md`, `pyp.md`, `christian-studies.md`),
   each using the `subject` layout to render its cards.
+- `index.md` — the homepage. Lists the subject tiles and a short "how to
+  use" blurb explaining browsing vs. search; edit the blurb here if the
+  wording needs to change.
+- `_includes/footer.html` — the site footer: a "Last updated" date and a
+  `© Andrew Snape` credit linking to
+  [andrew-snape.github.io](https://andrew-snape.github.io). Both the date
+  and the copyright year are pulled from `site.time` (the Jekyll build
+  time), so they refresh automatically on every deploy with no manual
+  editing.
 
 ## Adding a new subject
 

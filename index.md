@@ -5,6 +5,11 @@ title: Home
 <h1 class="page-heading">{{ site.title }}</h1>
 <p class="page-intro">{{ site.description }}</p>
 
+<div class="how-to">
+  <p><strong>Browse</strong> — pick a subject below to see its links, grouped by area.</p>
+  <p><strong>Search</strong> — press <kbd>/</kbd> or use the bar above to search every subject at once.</p>
+</div>
+
 <div class="subject-grid">
   {% for subject in site.subjects %}
   {%- assign groups = site.data.links[subject.key] -%}
