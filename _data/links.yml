@@ -23,6 +23,9 @@ maths:
     - name: Maths Starters
       url: https://mathsstarters.net/
       description: Ready made daily starter slides covering number facts, puzzles, and quick reasoning warm ups.
+    - name: Broken Calculators
+      url: https://andrew-snape.github.io/broken-calculators/
+      description: Reach a target number using only the calculator's working keys, three different ways, by Andrew Snape.
 
   rich_tasks:
     - name: NRICH Maths
