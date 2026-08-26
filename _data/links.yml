@@ -211,11 +211,11 @@ class_utilities:
     - name: Flippity Randomiser
       url: https://www.flippity.net/
       description: Turns a Google Sheet into random name pickers, seating charts, and group generators.
-    - name: Team Shake
-      url: https://teamshake.tools/
-      description: Quick random or balanced group generator, good for mixing up table groups.
 
   general_tools:
+    - name: Blockly Games
+      url: https://blockly.games/
+      description: Google's free sequence of coding puzzles that teach programming logic through block based games.
     - name: Canva for Education
       url: https://www.canva.com/education/
       description: Free design platform for teachers and students, used for posters, slides, and printable resources.
@@ -287,6 +287,9 @@ research:
     - name: DOGO News
       url: https://www.dogonews.com/
       description: Kid friendly news articles across science, world events, and sport with linked quizzes.
+    - name: Kids News
+      url: https://www.kidsnews.com.au/
+      description: News Corp Australia's news site levelled for primary readers, with audio read-alouds and comprehension quizzes.
 
   australian_sources:
     - name: Trove
