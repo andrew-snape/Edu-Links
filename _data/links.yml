@@ -26,6 +26,9 @@ maths:
     - name: Broken Calculators
       url: https://andrew-snape.github.io/broken-calculators/
       description: Reach a target number using only the calculator's working keys, three different ways, by Andrew Snape.
+    - name: Maths Warm-Ups
+      url: https://andrew-snape.github.io/mathswarmups/
+      description: TV ready launcher for number talks, subitising, WODB, virtual dice, ten frames and a number generator, by Andrew Snape.
 
   rich_tasks:
     - name: NRICH Maths
