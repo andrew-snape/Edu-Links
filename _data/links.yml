@@ -63,6 +63,9 @@ maths:
     - name: Love Maths Games
       url: https://www.lovemaths.me/games
       description: Free browser games covering operations, number and other strands for Foundation to Year 6.
+    - name: Dr Paul Swan Maths Games
+      url: https://drpaulswan.com.au/resources/games/
+      description: Free dice, card and board games targeting basic facts and place value, from Pre-Foundation to Year 6, with printable instructions and video tutorials.
 
   problem_solving_and_planning:
     - name: Building Thinking Classrooms Resources
