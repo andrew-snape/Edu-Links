@@ -43,6 +43,9 @@ maths:
     - name: Ochre Education
       url: https://ochreeducation.org/
       description: Free, sequenced Australian Curriculum aligned lesson resources, including the coordinates unit already in use.
+    - name: reSolve
+      url: https://resolve.edu.au
+      description: Free Australian Curriculum aligned teaching sequences and tasks designed to get students thinking and working like mathematicians.
 
   fluency_and_number_facts:
     - name: Times Tables Rock Stars
